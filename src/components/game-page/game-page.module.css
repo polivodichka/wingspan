@@ -1,0 +1,24 @@
+.wrapper {
+  display: grid;
+  grid-auto-rows: max-content;
+  justify-items: center;
+  gap: 24px;
+  padding: 0;
+}
+.resultsWrapper {
+  min-inline-size: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+
+  justify-self: stretch;
+  inline-size: 100%;
+
+  .resultsTable {
+    display: inline-block;
+    min-inline-size: max-content !important;
+  }
+
+  .results {
+    min-inline-size: max-content !important;
+  }
+}

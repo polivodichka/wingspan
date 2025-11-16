@@ -1,0 +1,12 @@
+.rootWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  inline-size: 100%;
+  block-size: 100%;
+}
+.root {
+  inline-size: min-content;
+  block-size: min-content;
+}

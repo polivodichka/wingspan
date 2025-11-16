@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    "types": [
+      "vite/client"
+    ],
+    "incremental": true,
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "removeComments": false,
+    "noImplicitAny": false,
+    "strict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "preserveConstEnums": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "allowJs": false,
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "useUnknownInCatchVariables": false,
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "postCssOptions": {
+            "useConfig": true
+          }
+        }
+      },
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "postCssOptions": {
+            "useConfig": true
+          }
+        }
+      }
+    ]
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
