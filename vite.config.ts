@@ -11,9 +11,9 @@ export default defineConfig({
       },
     }),
   ],
-  optimizeDeps: {
-    include: ["@alfalab/core-components"],
-  },
+  // optimizeDeps: {
+  //   include: ["@alfalab/core-components"],
+  // },
   build: {
     target: "esnext",
     commonjsOptions: {

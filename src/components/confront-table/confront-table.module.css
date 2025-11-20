@@ -3,3 +3,7 @@
     grid-template-columns: 1fr 1fr;
     padding: 1px;
 }
+
+.goalImage{
+    max-inline-size: max(2cm, 100px);
+}

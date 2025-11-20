@@ -3,8 +3,11 @@ import { EnterPage } from "./components/enter-page";
 import { useAppSelector } from "./hooks/typed-react-redux-hooks";
 import { isGameActiveSelector } from "./redux/modules/app";
 import { GamePage } from "./components/game-page";
+import { useWakeLock } from "./hooks/useWakeLock";
 
 function App() {
+  useWakeLock();
+  
   const isGameActive = useAppSelector(isGameActiveSelector);
 
   return (

@@ -15,6 +15,7 @@ import { Chip } from "~/components/chip";
 
 import styles from "./confront-table.module.css";
 import { Gap } from "@alfalab/core-components/gap";
+import { GOAL_IMAGES } from "~/constants/goals";
 
 export function ConfrontTable() {
   const dispatch = useAppDispatch();
@@ -65,7 +66,7 @@ export function ConfrontTable() {
                   tag="div"
                   style={goalCellStyle}
                 >
-                  {goal}
+                  <img className={styles.goalImage} src={GOAL_IMAGES[goal]} alt={goal} />
                 </Typography.Text>
               </Table.TCell>
 

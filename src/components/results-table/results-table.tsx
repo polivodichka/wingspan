@@ -45,7 +45,7 @@ export function ResultsTable() {
         Результаты
       </Typography.Title>
       <Gap size={24} direction="vertical" />
-      <Table>
+      <Table stickyHeader={true}>
         <Table.THead>
           {selectedColors.map((color, index) => (
             <Table.THeadCell key={color}>
