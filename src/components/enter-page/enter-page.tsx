@@ -2,9 +2,10 @@ import { Gap } from "@alfalab/core-components/gap";
 import { Button } from "@alfalab/core-components/button";
 import { Space } from "@alfalab/core-components/space";
 
-import React from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import {
   initGame,
+  initSelectedColors,
   selectedColorsSelector,
 } from "~/redux/modules/app";
 import {
@@ -20,6 +21,10 @@ export function EnterPage() {
   const dispatch = useAppDispatch();
 
   const chips = useAppSelector(selectedColorsSelector);
+
+  useLayoutEffect(() => {
+    dispatch(initSelectedColors());
+  }, []);
 
   const handleStart = () => {
     dispatch(initGame());

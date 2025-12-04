@@ -3,6 +3,7 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 import { COLOR } from "~/constants/colors";
 import { CONFRONT_MARKS } from "~/constants/goals";
+import { SELECTED_COLORS_KEY } from "~/constants/localstorage";
 import { generateRoundGoals } from "~/utils/generateRoundGoals";
 
 export type AppState = {
@@ -182,6 +183,17 @@ export const appSlice = createSlice({
 
       state.isGameActive = true;
       resetConfrontTableDataFunction(state);
+
+      localStorage.setItem(
+        SELECTED_COLORS_KEY,
+        JSON.stringify(state.selectedColors)
+      );
+    },
+    initSelectedColors: (state) => {
+      const savedColors = localStorage.getItem(SELECTED_COLORS_KEY);
+      if (savedColors) {
+        state.selectedColors = JSON.parse(savedColors);
+      }
     },
     setIsGameActive: (state, { payload }: PayloadAction<boolean>) => {
       state.isGameActive = payload;
@@ -242,8 +254,7 @@ export const appSlice = createSlice({
           }
         });
       });
-            updateTotal(state, chipIndex);
-
+      updateTotal(state, chipIndex);
     },
 
     updateResultTableData: (
@@ -285,6 +296,7 @@ export const {
   changeChipColor,
   setChipCount,
   initGame,
+  initSelectedColors,
   setIsGameActive,
   resetConfrontTableData,
   updateConfrontTableData,
